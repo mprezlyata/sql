@@ -54,7 +54,8 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1: Create the CUSTOMER_ADDRESS table with two columns: customer_id and customer_address. The customer_address field will be overwritten when the customer's address changes. 
+Type 2: Add a new record to the CUSTOMER_ADDRESS table when the customer's address changes. We can also add valid_from and valid_to columns to the table, which contain information about the date from which and to which the address is current, to preserve historical data. For example, if we need to create a report: customers from which area made purchases in previous periods. For convenience, we can also add a flag column that takes the value Y/N depending on whether the address is current now or not.
 ```
 
 ***
